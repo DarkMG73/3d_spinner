@@ -1,0 +1,192 @@
+#stage {
+  position: relative;
+  width: 100%;
+  background: black;
+  height:1000px;
+  //perspective: 1200px;
+}
+button {
+  font-size: 24px;
+}
+.control-wrap {
+    position: fixed;
+    display: flex;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    background: darkgray;
+    border: 2px outset darkgray;
+    border-radius: 10px;
+    padding: 4px;
+}
+.control-btns {
+    margin: 0 .2em;
+    padding: .2em .5em;
+    border-radius: 10px;
+    border: 1px outset darkgrey;
+}
+
+#master-outerwrap {
+    position: relative;
+    display: flex;
+    top: 25%;
+    width: auto;
+    height: 300px;
+    align-content: center;
+    justify-content: Center;
+    transform: translateZ(-1200px);
+    perspective: 1200px;
+    perspective-origin: center;
+    transform-style: preserve-3d;
+}
+#master-parent {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    transform-style: preserve-3d;
+    transform-origin: 50% 50% -375px;
+    transform: rotate3d(1,1,0, 45deg);
+    transition: .3s all ease;
+}
+
+#master-parent :nth-child(n) {
+  width: 300px;
+  height: 300px;
+  position: absolute;
+  //border: 3px solid silver;
+  //perspective: 300px;
+  opacity: 1;
+   transform-style: preserve-3d;
+  font-size: 75px;
+  bottom: 0;
+  color: white;
+  text-align: center;
+}
+
+#master-parent :nth-child(n):after {
+    position: absolute;
+    display: block;
+    content: ' ';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    transform-style: preserve-3d;
+    transform: rotateY( 180deg );
+}
+
+#master-parent .top-side {
+  opacity: 0;
+}
+
+#master-parent .left-side {
+  transform-origin: right;
+}
+#master-parent .right-side {
+  transform-origin: left;
+}
+/*** Bottom ***/
+#master-parent :nth-child(1) {
+  top: 0px;
+  left: 0;
+  background:white;
+  transform: rotate3d(1, 0, 0, 90deg);
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  
+
+}
+/*** Top ***/
+#master-parent :nth-child(2) {
+  transform: rotate3d(1, 0, 0, -90deg);
+  bottom: 0;
+  left: 0;
+  background:white;
+  transform-origin: top;
+  
+}
+
+/*** L1 ***/
+#master-parent :nth-child(3) {
+  top: 0px;
+  left: 0;
+  background:orange;
+  transform: translate3d(-100%, 0, 0) rotate3d(0, 1, 0, -45deg);
+}
+
+/*** L2 ***/
+#master-parent :nth-child(4) {
+  transform: translate3d(-171%, 0, -213px) rotate3d(0, 1, 0,-90deg);
+  top: 0;
+  left: 0;
+  background:purple;
+  
+}
+
+/*** L3 ***/
+#master-parent :nth-child(5) {
+  top: 0px;
+  left: 0;
+  background: aqua;
+  transform: translate3d(-171%, 0, -514px) rotate3d(0, 1, 0, -135deg);
+ 
+}
+
+/*** L4 ***/
+#master-parent :nth-child(6) {
+  transform: translate3d(-100%, 0, -727px) rotate3d(0, 1, 0, -180deg);
+  bottom: 0;
+  left: 0;
+  background:pink;
+}
+
+/*** R1 ***/
+#master-parent :nth-child(7) {
+  transform: translate3d(0, 0, 0) rotate3d(0, 1, 0, 0deg);
+  bottom: 0;
+  left: 0;  background:blueviolet;
+}
+
+/*** R2 ***/
+#master-parent :nth-child(8) {
+  transform: translate3d(100%, 0, 0) rotate3d(0, 1, 0, 45deg);
+  bottom: 0;
+  left: 0;
+  background:yellow;
+}
+
+/*** R3 ***/
+#master-parent :nth-child(9) {
+  transform: translate3d(171%, 0, -213px) rotate3d(0, 1, 0, 90deg);
+  bottom: 0;
+  left: 0;
+  background:orangered;
+}
+
+/*** R4 ***/
+#master-parent :nth-child(10) {
+  transform: translate3d(171%, 0, -514px) rotate3d(0, 1, 0, 135deg);
+  bottom: 0;
+  left: 0;
+  background:grey;
+}
+
+#master-parent :nth-child(n+2) {
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#e4f5fc+0,bfe8f9+33,9fd8ef+55,2ab0ed+100 */
+background: rgb(228,245,252); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgba(228,245,252,1) 0%, rgba(191,232,249,1) 33%, rgba(159,216,239,1) 55%, rgba(42,176,237,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 33%,rgba(159,216,239,1) 55%,rgba(42,176,237,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, rgba(228,245,252,1) 0%,rgba(191,232,249,1) 33%,rgba(159,216,239,1) 55%,rgba(42,176,237,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e4f5fc', endColorstr='#2ab0ed',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+#master-parent :nth-child(3n+1) {
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#f0b7a1+0,bf6e4e+100 */
+background: rgb(240,183,161); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover, rgba(240,183,161,1) 0%, rgba(191,110,78,1) 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover, rgba(240,183,161,1) 0%,rgba(191,110,78,1) 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center, rgba(240,183,161,1) 0%,rgba(191,110,78,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f0b7a1', endColorstr='#bf6e4e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
